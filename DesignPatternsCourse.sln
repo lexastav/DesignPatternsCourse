@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsCourse", "DesignPatternsCourse\DesignPatternsCourse.csproj", "{779ADF65-2AC5-4E80-8BB7-BA5F6A8473DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsCourseIntro", "DesignPatternsCourse\DesignPatternsCourseIntro.csproj", "{779ADF65-2AC5-4E80-8BB7-BA5F6A8473DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "FactoryMethod\FactoryMethod.csproj", "{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.FactoryMethod", "FactoryMethod\A.FactoryMethod.csproj", "{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B.AbstractFactory", "AbstractFactory\B.AbstractFactory.csproj", "{D82A6A74-7EE1-4378-BFD8-CC549C2E718C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A.GenerativePatterns", "A.GenerativePatterns", "{B671C58B-C4AE-4475-BB0C-829BDBCC644A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,17 @@ Global
 		{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82A6A74-7EE1-4378-BFD8-CC549C2E718C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82A6A74-7EE1-4378-BFD8-CC549C2E718C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82A6A74-7EE1-4378-BFD8-CC549C2E718C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82A6A74-7EE1-4378-BFD8-CC549C2E718C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2A8B0C3-1A9E-4D99-96A3-33CC6803B9E1} = {B671C58B-C4AE-4475-BB0C-829BDBCC644A}
+		{D82A6A74-7EE1-4378-BFD8-CC549C2E718C} = {B671C58B-C4AE-4475-BB0C-829BDBCC644A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BCE5830-0406-451A-BAAE-0D500BA0B0ED}

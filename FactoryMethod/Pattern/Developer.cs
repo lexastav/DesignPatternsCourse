@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FactoryMethod.Pattern
 {
-    //адстрактный класс строительной компании
+    //абстрактный класс строительной компании
     abstract class Developer
     {
         public string Name { get; set; }
@@ -15,6 +15,7 @@ namespace FactoryMethod.Pattern
         {
             Name = name;
         }
+        // собственно сам фабричный метод
         abstract public House Create();
     }
 }

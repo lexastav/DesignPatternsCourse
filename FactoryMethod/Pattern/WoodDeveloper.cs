@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FactoryMethod.Pattern
 {
+    // строит деревянные дома
     class WoodDeveloper : Developer
     {
         public WoodDeveloper(string name) : base(name)
