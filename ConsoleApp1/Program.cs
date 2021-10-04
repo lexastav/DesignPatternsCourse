@@ -1,7 +1,11 @@
 ﻿using C.Command.Pattern.Commands;
 using C.Command.Pattern.Invokers;
+using C.Command.Pattern.Macrocommands.Commands;
+using C.Command.Pattern.Macrocommands.Invokers;
+using C.Command.Pattern.Macrocommands.Receivers;
 using C.Command.Pattern.Receivers;
 using System;
+using System.Collections.Generic;
 
 namespace C.Command
 {
@@ -31,21 +35,39 @@ namespace C.Command
     //в переменной level). Так как кнопки 2, значит и комманды 2- включение и регулировка громкости. Кнопки пульта мы оформили ввиде массива: первая для
     //TV, вторая для Volume. В качестве логгера мы использовали стэк.
 
+    //На самом деле пример с пультом не очень хороший. Как бы не логично в получателях иметь целый телевизор и звук, как отдельного получателя.
+    //Более подходящий пример рассмотрим на основе макрокоманды, то есть некой команды, которая управляет набором команд. Вот у нас есть программист,
+    //тестировщик и маркетолог, каждый занят своим делом, то есть у менеджера, который ими управляет, в арсенале набор комманд для каждого из них,
+    //однако категорически важен порядок выполнения, то есть маркетолог не долже начинать маркетинговую активность раньше чем начнет работу тестировщик
+    //и программист, а, в свою очередь, тестировщик не может начать работу раньше чем ее начнет программист. Соответственно и заканчивают они тоже
+    //в том же порядке. Вот как раз дабы это все организовать- менеджеру и нужна будет макрокоманда. Ему не нужно будет управлять процессом точечно,
+    //ему достаточно будет обратиться к макрокоманде. В общем у нас тут целый букет организовывается, и порядок и очередь.
+
+    //Исходя из вышеописанного делаем вывод, что паттерн Команда лучше использовать когда:
+    // 1) Когда надо передавать в качестве параметров определенные действия, вызываемые в ответ на другие действия. То есть когда необходимы функции
+    //    обратного действия в ответ на определенные действия.
+    // 2) Когда необходимо обеспечить выполнение очереди запросов, а также их возможную отмену.
+    // 3) Когда надо поддерживать логгирование изменений в результате запросов. Использование логов может помочь восстановить состояние системы -
+    //    для этого необходимо будет использовать последовательность запротоколированных команд.
+
 
     class Program
     {
         static void Main(string[] args)
+        {           
+        }
+        public static void MultiRemote()
         {
             TV tv = new TV();
             Volume volume = new Volume();
             RemoteControl remoteControl = new RemoteControl();
-            
+
             remoteControl.SetCommand(0, new TVOnCommand(tv));
             remoteControl.SetCommand(1, new VolumeCommand(volume));
             //включаем телевизор
             remoteControl.PressButton(0);
             //увеличиваем громкость на 5
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 remoteControl.PressButton(1);
             }
@@ -56,6 +78,24 @@ namespace C.Command
             }
 
             Console.ReadLine();
+        }
+        public static void MacroCommands()
+        {
+            Programmer programmer = new Programmer();
+            Tester tester = new Tester();
+            Marketer marketer = new Marketer();
+
+            var commands = new List<C.Command.Pattern.Macrocommands.Commands.ICommand>
+            {
+                new CodeCommand(programmer),
+                new TestCommand(tester),
+                new AdvertizeCommand(marketer)
+            };
+
+            Manager manager = new Manager();
+            manager.SetCommand(new MacroCommand(commands));
+            manager.StartProject();
+            manager.StopProject();
         }
     }
 }
