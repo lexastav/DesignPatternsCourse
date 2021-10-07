@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B.Oserver", "B.Oserver\B.Os
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C.Command", "ConsoleApp1\C.Command.csproj", "{D15CA5FC-93FA-4CE5-9935-CF192A1795F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.TemplateMethod", "D.TemplateMethod\D.TemplateMethod.csproj", "{5F92623D-9EDD-4806-A714-3169ED721FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D.TemplateMethod", "D.TemplateMethod\D.TemplateMethod.csproj", "{5F92623D-9EDD-4806-A714-3169ED721FEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E.Iterator", "E.Iterator\E.Iterator.csproj", "{092ACDC2-F74D-4415-B123-17B411110B4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{5F92623D-9EDD-4806-A714-3169ED721FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F92623D-9EDD-4806-A714-3169ED721FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F92623D-9EDD-4806-A714-3169ED721FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092ACDC2-F74D-4415-B123-17B411110B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092ACDC2-F74D-4415-B123-17B411110B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092ACDC2-F74D-4415-B123-17B411110B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092ACDC2-F74D-4415-B123-17B411110B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{D9C3CAC5-D402-4FBF-975A-42BEEB182A31} = {5609B041-5C4A-44C9-823B-8A472704E441}
 		{D15CA5FC-93FA-4CE5-9935-CF192A1795F9} = {5609B041-5C4A-44C9-823B-8A472704E441}
 		{5F92623D-9EDD-4806-A714-3169ED721FEE} = {5609B041-5C4A-44C9-823B-8A472704E441}
+		{092ACDC2-F74D-4415-B123-17B411110B4E} = {5609B041-5C4A-44C9-823B-8A472704E441}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BCE5830-0406-451A-BAAE-0D500BA0B0ED}
